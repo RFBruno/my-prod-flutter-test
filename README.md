@@ -35,3 +35,15 @@ https://scene.zeplin.io/project/5b48f7870acff10844983114
 
 ## Envio do teste
 1. Suba o repositório no seu Github e envie o link com o assunto: **Teste Dev. Flutter Junior** para Jackson Aguiar [jacksonwellington.sa@gmail.com](mailto:jacksonwellington.sa@gmail.com)
+
+
+## run app
+- fvm install 3.7.0
+- fvm global 3.7.0
+- flutter clean; flutter pub get
+- ![Alt text](imgs/image.png)
+- ![Alt text](imgs/image-1.png)
+
+## View
+![Alt text](imgs/image-2.png)
+![Alt text](imgs/image-3.png)

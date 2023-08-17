@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 import 'package:my_prod_flutter_test/app/core/ui/extensions/theme_extension.dart';
 import 'package:my_prod_flutter_test/app/core/ui/icons/my_prod_icons.dart';
@@ -27,6 +28,7 @@ class MyprodCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final NumberFormat formatter = NumberFormat("###.###");
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
@@ -46,7 +48,7 @@ class MyprodCard extends StatelessWidget {
             children: [
               Icon(icon, color: context.slateGrey,),
               const SizedBox(width: 3),
-              Text(favorites ? '$totalStar' : language, style: context.textStyleTwo,),
+              Text(favorites ? formatter.format(totalStar) : language, style: context.textStyleTwo,),
               const SizedBox(width: 30),
               Icon(MyProd.flow_branch, color: context.slateGrey,),
               const SizedBox(width: 3),

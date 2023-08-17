@@ -11,6 +11,10 @@ class ReposServiceImpl extends ReposService {
       _repository.findAll(username);
 
   @override
+  FutureOr<List<ReposModel>> findAllStarred(String username) =>
+      _repository.findAllStarred(username);
+
+  @override
   FutureOr<int> totalCommits(String username, String repos) =>
       _repository.totalCommits(username, repos);
 }

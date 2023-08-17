@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:intl/intl.dart';
 
 import 'package:my_prod_flutter_test/app/core/ui/extensions/size_screen_extension.dart';
 import 'package:my_prod_flutter_test/app/pages/home/home_controller.dart';
@@ -18,32 +20,38 @@ class StarredTab extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SearchFormField(),
-          ...List.generate(
-            5,
-            (index) {
-              return Column(
-                children: [
-                  const MyprodCard(
-                    title: 'todo-back',
-                    subtitle:
-                        'Lorem Ipsum is simply dummy text of the printing and typesetting i',
-                    icon: Icons.star,
-                    language: 'JavaScript',
-                    commits: 177,
-                    favorites: true,
-                    totalStar: 150,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Divider(
-                      thickness: 1.sp,
+          SearchFormField(controller: controller,),
+          Obx(() {
+            return ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: controller.starredList.length,
+              itemBuilder: (context, index) {
+                final repos = controller.starredList[index];
+                return Column(
+                  children: [
+                    MyprodCard(
+                      title: repos.name,
+                      subtitle: repos.description == ''
+                          ? 'Sem descrição'
+                          : repos.description,
+                      icon: Icons.star,
+                      favorites: true,
+                      totalStar: repos.stargazersCount,
+                      language: repos.language,
+                      commits: repos.totalCommits,
                     ),
-                  ),
-                ],
-              );
-            },
-          ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Divider(
+                        thickness: 1.sp,
+                      ),
+                    ),
+                  ],
+                );
+              },
+            );
+          }),
         ],
       ),
     );

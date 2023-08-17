@@ -1,3 +1,4 @@
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:my_prod_flutter_test/app/core/ui/extensions/size_screen_extension.dart';
@@ -74,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                       indicatorWeight: 6,
                       tabs: [
                         Obx(() => _tab(context, 'Repos', controller.reposList.length)),
-                        Obx(() => _tab(context, 'Starred', controller.reposList.length)),
+                        Obx(() => _tab(context, 'Starred', controller.starredList.length)),
                       ],
                     ),
                     Expanded(

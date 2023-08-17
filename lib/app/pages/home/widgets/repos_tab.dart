@@ -20,14 +20,14 @@ class ReposTab extends StatelessWidget {
         physics: const ScrollPhysics(),
         child: Column(
           children: [
-            const SearchFormField(),
+            SearchFormField(controller: controller),
             Obx(() {
               return ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                itemCount: controller.reposList.length,
+                itemCount: controller.reposListFiltered.length,
                 itemBuilder: (context, index) {
-                  final repos = controller.reposList[index];
+                  final repos = controller.reposListFiltered[index];
                   return Column(
                     children: [
                       MyprodCard(

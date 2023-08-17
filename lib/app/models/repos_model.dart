@@ -7,11 +7,13 @@ class ReposModel {
   final String description;
   final String language;
   final int totalCommits;
+  final int stargazersCount;
   ReposModel({
     required this.name,
     required this.description,
     required this.language,
     required this.totalCommits,
+    required this.stargazersCount,
   });
 
   Map<String, dynamic> toMap() {
@@ -20,6 +22,7 @@ class ReposModel {
       'description': description,
       'language': language,
       'totalCommits': totalCommits,
+      'stargazers_count': stargazersCount,
     };
   }
 
@@ -29,6 +32,7 @@ class ReposModel {
       description: map['description'] ?? '',
       language: map['language'] ?? '',
       totalCommits: map['totalCommits'] ?? 0,
+      stargazersCount: map['stargazers_count'] ?? 0,
     );
   }
 
@@ -38,7 +42,7 @@ class ReposModel {
 
   @override
   String toString() {
-    return 'ReposModel(name: $name, description: $description, language: $language, totalCommits: $totalCommits)';
+    return 'ReposModel(name: $name, description: $description, language: $language, totalCommits: $totalCommits, stargazersCount: $stargazersCount)';
   }
 
   ReposModel copyWith({
@@ -46,12 +50,14 @@ class ReposModel {
     String? description,
     String? language,
     int? totalCommits,
+    int? stargazersCount,
   }) {
     return ReposModel(
       name: name ?? this.name,
       description: description ?? this.description,
       language: language ?? this.language,
       totalCommits: totalCommits ?? this.totalCommits,
+      stargazersCount: stargazersCount ?? this.stargazersCount,
     );
   }
 }

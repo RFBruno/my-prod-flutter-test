@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:my_prod_flutter_test/app/core/ui/extensions/theme_extension.dart';
@@ -27,6 +28,7 @@ class AppWidget extends StatelessWidget {
               backgroundColor: context.slateGreyTwo
             )
           ),
+          builder: EasyLoading.init(),
           routes: routes,
         );
       },
