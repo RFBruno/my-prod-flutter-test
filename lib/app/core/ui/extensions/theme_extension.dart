@@ -12,13 +12,13 @@ extension ThemeExtension on BuildContext {
   Color get slateGreyTwo => const Color(0xff586069);
 
   TextStyle get textStyle => TextStyle(
-        fontFamily: 'OpenSans',
-        fontSize: 18.sp,
+        // fontFamily: 'OpenSans',
+        fontSize: 20.sp,
         fontWeight: FontWeight.bold
       );
   TextStyle get textStyleTwo => TextStyle(
-        fontFamily: 'OpenSans',
-        fontSize: 14.sp,
+        // fontFamily: 'OpenSans',
+        fontSize: 13.sp,
         fontWeight: FontWeight.normal,
         color: slateGrey
       );

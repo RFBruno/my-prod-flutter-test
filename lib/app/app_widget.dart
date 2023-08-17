@@ -20,6 +20,7 @@ class AppWidget extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'My prod test',
           theme: ThemeData(
+            // fontFamily: 'OpenSans',
             primarySwatch: Colors.grey,
             appBarTheme: AppBarTheme(
               elevation: 0,
